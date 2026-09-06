@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #08080A;
+  --color-void-soft: #101012;
+  --color-void-card: #131311;
+  --color-void-line: #2A2620;
+  --color-cream: #F2ECDD;
+  --color-cream-dim: #C9C2AF;
+  --color-gold: #C9A662;
+  --color-gold-soft: #E4CE97;
+  --color-gold-deep: #8A6E36;
+  --color-muted: #7A7568;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-signature: "Allura", cursive;
+  --font-body: "Montserrat", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 88px;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-cream-dim);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-void);
+}
+
+.gold-text {
+  background: linear-gradient(180deg, #F2E4BC 0%, #D8B876 40%, #9C7B3E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.silver-text {
+  background: linear-gradient(180deg, #FFFFFF 0%, #C7C7C7 60%, #8A8A8A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.spotlight {
+  background: radial-gradient(60% 60% at 70% 20%, rgba(201, 166, 98, 0.16) 0%, rgba(201, 166, 98, 0) 70%);
+}
+
+.ticker-track {
+  animation: ticker-scroll 32s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
